@@ -4,13 +4,14 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container mt-5 mb-5">
 	
 	<div class="row row-cols-4">
 
 	{%for blog in blogs %}
 		<div class="col p-2">
 			<div class="p-5 border shadow text-center">
+				<img src="/{{blog.img}}" class="img-thumbnail">
 				<h2>{{blog.title}}</h2>
 				<p>{{blog.description}}</p>
 			</div>

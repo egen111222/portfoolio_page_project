@@ -9,3 +9,4 @@ class Blog(db.Model):
     title = db.Column(db.String(150))
     description = db.Column(db.String(250))
     text = db.Column(db.Text)
+    img = db.Column(db.String(150))

@@ -6,7 +6,7 @@ import os
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from blog_part import blog_app
-
+from adapters import ImageView
 load_dotenv()
 
 app = Flask(__name__,
@@ -25,7 +25,7 @@ def index():
 app.register_blueprint(blog_app,url_prefix="/blog")
 
 admin = Admin(app, name='Сайт Нашого Блогу', template_mode='bootstrap3')
-admin.add_view(ModelView(Blog, db.session))
+admin.add_view(ImageView(Blog, db.session))
 
 if __name__ == "__main__":
     app.run()
