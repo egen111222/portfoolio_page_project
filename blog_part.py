@@ -13,4 +13,4 @@ def view_blogs():
 
 @blog_app.route("/<int:blog_id>")
 def view_blog(blog_id):
-    pass
+    return ""
