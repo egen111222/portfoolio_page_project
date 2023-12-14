@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import os
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
+from blog_part import blog_app
 
 load_dotenv()
 
@@ -21,6 +22,7 @@ with app.app_context():
 def index():
     return render_template("index.html")
 
+app.register_blueprint(blog_app,url_prefix="/blog")
 
 admin = Admin(app, name='Сайт Нашого Блогу', template_mode='bootstrap3')
 admin.add_view(ModelView(Blog, db.session))
